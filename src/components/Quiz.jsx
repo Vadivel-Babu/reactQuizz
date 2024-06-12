@@ -22,7 +22,7 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   },
 }));
 
-const Quiz = () => {
+const Quiz = ({ handleTheme, theme }) => {
   const { category } = useParams();
   const navigate = useNavigate();
   const mark = ["A", "B", "C", "D", "E"];
@@ -46,10 +46,15 @@ const Quiz = () => {
 
   return (
     <div className="max-w-[1400px] mx-auto">
-      <Navbar title={category} img={category} />
+      <Navbar
+        title={category}
+        img={category}
+        handleTheme={handleTheme}
+        theme={theme}
+      />
       <div className="mt-5 flex mx-auto flex-col sm:flex-row sm:gap-[50px] flex-wrap lg:gap-[150px] py-2 px-5">
         <div className="flex-[0.8]">
-          <span className="italic text-grayNavy">
+          <span className="italic text-grayNavy dark:text-bluish">
             Questions {index + 1} of 10
           </span>
           <h1 className="font-semibold text-2xl w-full sm:text-3xl mt-3 mb-5 sm:mb-10 lg:mb-52">
@@ -75,7 +80,7 @@ const Quiz = () => {
                   setError(false);
                   setAnswer(option);
                 }}
-                className={`flex h-[70px] items-center cursor-pointer group justify-between  ${
+                className={`flex h-[70px] items-center cursor-pointer dark:bg-navy group justify-between  ${
                   !crtAnswer && !wrongAns && option === answer
                     ? "border-2 border-purple "
                     : ""
@@ -91,7 +96,7 @@ const Quiz = () => {
                   <span
                     className={`bg-greyish group-hover:bg-[#F6E7FF]  ${
                       crtAnswer && option === answer
-                        ? "bg-green text-white"
+                        ? "bg-green text-green"
                         : "text-grayNavy"
                     } ${
                       !crtAnswer && !wrongAns && option === answer
@@ -106,7 +111,7 @@ const Quiz = () => {
                   >
                     {mark[i]}
                   </span>
-                  <p className="text-lg font-bold">{option}</p>
+                  <p className="text-lg font-bold dark:text-white">{option}</p>
                 </div>
                 {wrongAns && option === answer && (
                   <CancelOutlinedIcon className="text-red" />

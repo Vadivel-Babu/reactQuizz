@@ -387,7 +387,7 @@ const useHook = (category) => {
       setWrongAns(true);
     }
   }
-  console.log(score);
+
   return {
     quizzes,
     questions,

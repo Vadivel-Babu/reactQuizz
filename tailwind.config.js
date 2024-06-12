@@ -5,10 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       backgroundImage: {
         ring: "url('/ring.png')",
+        black: "url('/Desktopdark.jpg')",
       },
     },
     colors: {

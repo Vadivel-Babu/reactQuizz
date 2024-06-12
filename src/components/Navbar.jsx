@@ -45,7 +45,7 @@ const Toggle = styled((props) => (
   },
 }));
 
-const Navbar = ({ title, img }) => {
+const Navbar = ({ title, img, handleTheme, theme }) => {
   return (
     <div className="flex justify-between px-3 py-4">
       <div className="flex gap-3">
@@ -57,13 +57,12 @@ const Navbar = ({ title, img }) => {
           {title || ""}
         </NavLink>
       </div>
-      {false && (
-        <div className="flex justify-end items-center gap-2">
-          <Sun />
-          <Toggle />
-          <Moon />
-        </div>
-      )}
+
+      <div className="flex justify-end items-center gap-2">
+        <Sun theme={theme} />
+        <Toggle onClick={handleTheme} />
+        <Moon theme={theme} />
+      </div>
     </div>
   );
 };
