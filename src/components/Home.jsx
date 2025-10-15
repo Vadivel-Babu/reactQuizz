@@ -28,7 +28,7 @@ const Home = ({ handleTheme, theme }) => {
   return (
     <div className="max-w-[1400px] mx-auto">
       <Navbar handleTheme={handleTheme} theme={theme} />
-      <div className="flex justify-evenly mt-10">
+      <div className="flex flex-col gap-5 justify-self-center max-w-[75%] mx-auto  md:w-full   md:flex md:flex-row  md:justify-evenly mt-10">
         <div>
           <h1 className="text-4xl">
             Welcome to the <br />

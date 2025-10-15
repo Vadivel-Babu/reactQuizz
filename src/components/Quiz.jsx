@@ -63,7 +63,7 @@ const Quiz = ({ handleTheme, theme }) => {
           <BorderLinearProgress
             variant="determinate"
             className="w-full sm:w-[350px]"
-            value={(index + 1) * 10}
+            value={index * 10}
           />
         </div>
         {questions.length === 0 ? (
